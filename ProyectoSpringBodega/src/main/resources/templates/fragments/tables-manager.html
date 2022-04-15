@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>tables</title>
+</head>
+<body>
+
+	<div class="jumbotron" th:fragment="tables-manager-empleado">
+		<h1>Mantenedor de Empleado</h1>
+	</div>
+	
+	<div class="jumbotron" th:fragment="tables-manager-producto">
+		<h1>Mantenedor de Producto</h1>
+	</div>
+	
+	<div class="btn-group" th:fragment="tables-manager-menu">
+		<button type="button" class="btn btn-primary"
+			onClick="location.href = 'empleado_page'">Empleado</button>
+		<button type="button" class="btn btn-primary"
+			onClick="location.href = 'producto_page'">Producto</button>
+	</div>
+</body>
+</html>

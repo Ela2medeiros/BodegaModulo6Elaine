@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Producto</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-table.css">
+<!-- <meta name="_csrf" th:content="${_csrf.token}"/> -->
+</head>
+<body>
+	<div class="container-fluid">
+		<div th:replace="fragments/tables-manager :: tables-manager-producto"></div>
+		<div th:replace="fragments/tables-manager :: tables-manager-menu"></div>
+		<h2>Mantenedor de Movimientos de Bodega</h2>
+
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary" onClick="add()">+</button>
+		</div>
+
+		<div class="table-responsive" id="tableDivContainer">
+			<table class="table table-condensed" id="productoTable"
+				data-toggle="table">
+				<thead>
+					<tr>
+						<th data-field="id_prod">Codigo Producto</th>
+						<th data-field="descrip_prod">Descripción de Producto</th>
+						<th data-field="unid_medida">Unidad Medida</th>
+						<th data-field="id_tprod">Codigo Tipo Producto</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Producto</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="usr">Codigo Producto</label>
+						<input type="text"	class="form-control" id="id_prod">
+						<label for="usr">Descripción de Producto</label>
+						<input type="text" class="form-control" id="descrip_prod">
+						<label for="usr">Unidad Medida</label>
+						<input type="text"	class="form-control" id="unid_medida">
+						<label for="usr">Codigo Tipo Producto</label>
+						<input type="text" class="form-control" id="id_tprod">
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<div class="btn-group" id="btn_group_new">
+						<button type="button" class="btn btn-primary" onClick="insert()">Save</button>
+					</div>
+					<div class="btn-group" id="btn_group_old">
+						<button type="button" class="btn btn-primary" onClick="update()">Save</button>
+						<button type="button" class="btn btn-primary" onClick="del()">Delete</button>
+					</div>
+					<div class="btn-group" id="btn_group_close">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) {
+				list();
+			});
+		</script>
+
+		<script src="/js/jquery-3.6.0.js"></script>
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/bootstrap-table.js"></script>
+		<script src="/js/producto.js"></script>
+</body>
+</html>

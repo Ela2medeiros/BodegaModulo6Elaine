@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Control Bodega</title>
+		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/bootstrap-table.css">
+	<!--<meta name="_csrf" th:content="${_csrf.token}"/>  -->
+	</head>
+	
+	<body>
+		<script src="/js/jquery-3.6.0.js"></script>
+		<script src="/js/bootstrap.js"></script>
+		
+		<div class="container-fluid">
+			<div th:replace="fragments/tables-manager :: tables-manager-empleado"></div>
+			<div th:replace="fragments/tables-manager :: tables-manager-producto"></div>
+			<div th:replace="fragments/tables-manager :: tables-manager-menu"></div>
+		</div>
+	</body>
+	
+</html>
